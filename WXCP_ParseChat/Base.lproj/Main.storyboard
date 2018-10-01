@@ -159,6 +159,62 @@
                                             <outlet property="usernameLabel" destination="iaD-i9-iqx" id="VNg-Rs-UuD"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SelfCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelfCell" rowHeight="136" id="ZAn-tg-Ajy" customClass="ChatCell" customModule="WXCP_ParseChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="164" width="375" height="136"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZAn-tg-Ajy" id="tCk-Pl-dtJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLV-kf-Sd9">
+                                                    <rect key="frame" x="16" y="8" width="343" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3LI-3n-Oqg">
+                                                    <rect key="frame" x="9.5" y="37" width="357.5" height="36.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="332-1L-LDz">
+                                                            <rect key="frame" x="8" y="8" width="341.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="332-1L-LDz" secondAttribute="bottom" constant="8" id="5rY-RK-dFU"/>
+                                                        <constraint firstItem="332-1L-LDz" firstAttribute="leading" secondItem="3LI-3n-Oqg" secondAttribute="leading" constant="8" id="fSJ-IQ-EH5"/>
+                                                        <constraint firstItem="332-1L-LDz" firstAttribute="top" secondItem="3LI-3n-Oqg" secondAttribute="top" constant="8" id="g2X-4K-4rz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="332-1L-LDz" secondAttribute="trailing" constant="8" id="vLL-9b-EBr"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="3LI-3n-Oqg" secondAttribute="trailing" constant="8" id="3CK-2j-Czy"/>
+                                                <constraint firstItem="3LI-3n-Oqg" firstAttribute="top" secondItem="BLV-kf-Sd9" secondAttribute="bottom" constant="8" id="I49-xn-5JJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="BLV-kf-Sd9" secondAttribute="trailing" constant="16" id="Kaf-Y0-Ars"/>
+                                                <constraint firstItem="BLV-kf-Sd9" firstAttribute="leading" secondItem="tCk-Pl-dtJ" secondAttribute="leading" constant="16" id="V0k-pl-B8R"/>
+                                                <constraint firstAttribute="bottom" secondItem="3LI-3n-Oqg" secondAttribute="bottom" constant="8" id="ijU-YR-RmD"/>
+                                                <constraint firstItem="BLV-kf-Sd9" firstAttribute="top" secondItem="tCk-Pl-dtJ" secondAttribute="top" constant="8" id="m24-Te-BHu"/>
+                                                <constraint firstItem="3LI-3n-Oqg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tCk-Pl-dtJ" secondAttribute="leading" constant="8" id="scY-ev-OrR"/>
+                                                <constraint firstItem="3LI-3n-Oqg" firstAttribute="top" secondItem="BLV-kf-Sd9" secondAttribute="bottom" constant="8" id="xtb-FC-Jez"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="xtb-FC-Jez"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bubbleView" destination="3LI-3n-Oqg" id="EZp-8X-Or8"/>
+                                            <outlet property="leftConstraint" destination="scY-ev-OrR" id="Bns-CV-EW7"/>
+                                            <outlet property="messageLabel" destination="332-1L-LDz" id="Bvt-zr-COe"/>
+                                            <outlet property="rightConstraint" destination="3CK-2j-Czy" id="VHl-KI-jTh"/>
+                                            <outlet property="usernameLabel" destination="BLV-kf-Sd9" id="2Wf-01-kGb"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>

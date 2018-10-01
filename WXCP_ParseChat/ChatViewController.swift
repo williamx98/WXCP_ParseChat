@@ -44,20 +44,20 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
+        
         let message = messages[indexPath.row]
+        var identifier = "ChatCell"
+        if let user = message["user"] as? PFUser {
+            if (user.username! == self.currentUsername!) {
+                identifier = "SelfCell"
+            }
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ChatCell
         cell.messageLabel.text = message["text"] as? String
         cell.selectionStyle = .none
-        cell.bubbleView.backgroundColor = UIColor.lightGray
+        cell.usernameLabel.text = "🤖"
         if let user = message["user"] as? PFUser {
-            // User found! update username label with username
             cell.usernameLabel.text = user.username
-            if (user.username! == self.currentUsername!) {
-                cell.bubbleView.backgroundColor = UIColor.blue
-            }
-        } else {
-            // No user found, set default username
-            cell.usernameLabel.text = "🤖"
         }
         return cell
     }
@@ -91,6 +91,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         chatMessage.saveInBackground { (success, error) in
             if success {
                 print("message saved")
+                self.messageField.text = "";
                 self.getMessages()
             } else if let error = error {
                 print(error.localizedDescription)
